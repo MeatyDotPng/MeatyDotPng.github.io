@@ -1,69 +1,347 @@
 <!DOCTYPE html>
-<!--
-	NOTES:
-	1. All tokens are represented by '$' sign in the template.
-	2. You can write your code only wherever mentioned.
-	3. All occurrences of existing tokens will be replaced by their appropriate values.
-	4. Blank lines will be removed automatically.
-	5. Remove unnecessary comments before creating your template.
--->
-<!-- Stefan Tolken u22525778 -->
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="authoring-tool" content="Adobe_Animate_CC">
-<title>VIO202T1P1</title>
-<!-- write your code here -->
-<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-<script src="project.js"></script>
-<script>
-var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-function init() {
-	canvas = document.getElementById("canvas");
-	anim_container = document.getElementById("animation_container");
-	dom_overlay_container = document.getElementById("dom_overlay_container");
-	var comp=AdobeAn.getComposition("93F50CD7B7C3C74AA372B74C08CC34A4");
-	var lib=comp.getLibrary();
-	var loader = new createjs.LoadQueue(false);
-	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
-	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
-	var lib=comp.getLibrary();
-	loader.loadManifest(lib.properties.manifest);
-}
-function handleFileLoad(evt, comp) {
-	var images=comp.getImages();	
-	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
-}
-function handleComplete(evt,comp) {
-	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-	var lib=comp.getLibrary();
-	var ss=comp.getSpriteSheet();
-	var queue = evt.target;
-	var ssMetadata = lib.ssMetadata;
-	for(i=0; i<ssMetadata.length; i++) {
-		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
-	}
-	exportRoot = new lib.project();
-	stage = new lib.Stage(canvas);	
-	//Registers the "tick" event listener.
-	fnStartAnimation = function() {
-		stage.addChild(exportRoot);
-		createjs.Ticker.framerate = lib.properties.fps;
-		createjs.Ticker.addEventListener("tick", stage);
-	}	    
-	//Code to support hidpi screens and responsive scaling.
-	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
-	AdobeAn.compositionLoaded(lib.properties.id);
-	fnStartAnimation();
-}
-</script>
-<!-- write your code here -->
-</head>
-<body onload="init();" style="margin:0px;">
-	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1920px; height:1080px">
-		<canvas id="canvas" width="1920" height="1080" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:1080px; position: absolute; left: 0px; top: 0px; display: block;">
-		</div>
-	</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Character Infographic</title>
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <ul>
+          <li><a href="#title">Title</a></li>
+          <li><a href="#main-character">Main Character</a></li>
+          <li><a href="#side-characters">Side Characters</a></li>
+          <li><a href="#world-description">World Description</a></li>
+          <li><a href="#about-author">About the Author</a></li>
+        </ul>
+      </nav>
+      <section id="title">
+        <img style="width: 50%" src="images/title.png" alt="Title image" />
+      </section>
+      <section id="main-character">
+        <div class="mainContainer">
+          <div class="left">
+            <img
+              src="images/character.png"
+              alt="Character Image"
+              class="image"
+            />
+          </div>
+          <div class="right">
+            <div class="section bio">
+              <h2>Bio</h2>
+              <div class="bio values">
+                <div class="holder">
+                  <h3>Name</h3>
+                  <p>Nano</p>
+                </div>
+                <div class="holder">
+                  <h3>Occupation</h3>
+                  <p>Hitman</p>
+                </div>
+                <div class="holder">
+                  <h3>Strengths</h3>
+                  <p>Sharp mind</p>
+                  <p>good observation skills</p>
+                </div>
+                <div class="holder">
+                  <h3>Weaknesses</h3>
+                  <p>Addicted to alcohol</p>
+                  <p>emotionally unavailable</p>
+                </div>
+              </div>
+            </div>
+            <div class="section stats">
+              <h2>Stats</h2>
+              <div class="stats values">
+                <div class="holder">
+                  <p>Strength: 8/10</p>
+                  <p>Agility: 8/10</p>
+                  <p>Smarts: 9/10</p>
+                </div>
+                <div class="holder">
+                  <p>Charm: 3/10</p>
+                  <p>Hardiness: 6/10</p>
+                  <p>Worldliness: 7/10</p>
+                </div>
+              </div>
+            </div>
+            <div class="section abilities">
+              <h2>Abilities and Weapons</h2>
+              <div class="abilities values">
+                <div class="holder">
+                  <h3>Abilities</h3>
+                  <p>Teleportation</p>
+                  <p>Nano Form</p>
+                </div>
+                <div class="holder">
+                  <h3>Weapon</h3>
+                  <p>Shapeshifting Arm</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="side-characters">
+        <div class="charContainer">
+          <div class="character">
+            <h2>side character 1</h2>
+          </div>
+          <div class="character">
+            <h2>side character 2</h2>
+          </div>
+          <div class="character">
+            <h2>side character 3</h2>
+          </div>
+          <div class="character">
+            <h2>side character 4</h2>
+          </div>
+          <div class="character">
+            <h2>side character 5</h2>
+          </div>
+        </div>
+      </section>
+      <section id="world-description">
+        <div class="textHolder" style="margin: 0px 200px">
+          <h2>placeholder World description</h2>
+          <br />
+          <p>
+            Welcome to 2050, where the line between life and death has become
+            increasingly blurred. We have made technological advancements,
+            created cyborgs, and befriended horny aliens. Life here can be
+            pretty entertaining.The world itself is a kaleidoscope of colors and
+            twisted landscapes, resembling something out of a fever dream. It's
+            as if the Teletubbies had a lovechild with Blade Runner, creating a
+            world that's both beautiful and haunting. But amidst the wonder lies
+            the harsh reality that life can be fleeting, and death can come at
+            any moment. So, welcome to our world, where death and laughter are
+            never too far apart.
+          </p>
+        </div>
+      </section>
+      <section id="about-author">
+        <h2>Hello my name is Stefan :)</h2>
+      </section>
+    </div>
+  </body>
 </html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1f2b;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Scroll bar */
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+
+  .charContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background-color: #2a2b3d9d;
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: right;
+  }
+
+  .navbar ul li {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .navbar ul li a:hover {
+    color: #a2a2a2;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: center;
+  }
+
+  section h1 {
+    font-size: 4rem;
+    color: #fff;
+  }
+
+  section p {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  section#title {
+    background-color: #ff4d4d;
+  }
+
+  section#main-character {
+    background-color: #ff1a1a;
+  }
+
+  section#side-characters {
+    background-color: #cc0000;
+  }
+
+  section#world-description {
+    background-color: #990000;
+  }
+
+  section#about-author {
+    background-color: #660000;
+  }
+
+  .section {
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+  }
+
+  .holder {
+    margin-bottom: 10px;
+  }
+
+  .holder h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .holder p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .top {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0.3;
+    margin-bottom: 20px;
+  }
+
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 20px;
+  }
+
+  .left {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .bio {
+    background-color: #434659;
+    color: #fff;
+  }
+
+  .stats {
+    background-color: #54798e;
+  }
+
+  .values {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .abilities {
+    background-color: #90c1d3;
+  }
+
+  .world {
+    background-color: #b5ead7;
+  }
+
+  .characters {
+    background-color: #6fedd6;
+  }
+
+  .author {
+    background-color: #ffbe0b;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+</style>
