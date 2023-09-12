@@ -1,347 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Character Infographic</title>
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>VIO Project 3</title>
   </head>
   <body>
     <div class="container">
-      <nav class="navbar">
-        <ul>
-          <li><a href="#title">Title</a></li>
-          <li><a href="#main-character">Main Character</a></li>
-          <li><a href="#side-characters">Side Characters</a></li>
-          <li><a href="#world-description">World Description</a></li>
-          <li><a href="#about-author">About the Author</a></li>
-        </ul>
-      </nav>
-      <section id="title">
-        <img style="width: 50%" src="images/title.png" alt="Title image" />
+      <section id="start">
+        <h1>Start Scrolling</h1>
+        <i class="lni lni-angle-double-down arrows"></i>
       </section>
-      <section id="main-character">
-        <div class="mainContainer">
-          <div class="left">
-            <img
-              src="images/character.png"
-              alt="Character Image"
-              class="image"
-            />
-          </div>
-          <div class="right">
-            <div class="section bio">
-              <h2>Bio</h2>
-              <div class="bio values">
-                <div class="holder">
-                  <h3>Name</h3>
-                  <p>Nano</p>
-                </div>
-                <div class="holder">
-                  <h3>Occupation</h3>
-                  <p>Hitman</p>
-                </div>
-                <div class="holder">
-                  <h3>Strengths</h3>
-                  <p>Sharp mind</p>
-                  <p>good observation skills</p>
-                </div>
-                <div class="holder">
-                  <h3>Weaknesses</h3>
-                  <p>Addicted to alcohol</p>
-                  <p>emotionally unavailable</p>
-                </div>
-              </div>
-            </div>
-            <div class="section stats">
-              <h2>Stats</h2>
-              <div class="stats values">
-                <div class="holder">
-                  <p>Strength: 8/10</p>
-                  <p>Agility: 8/10</p>
-                  <p>Smarts: 9/10</p>
-                </div>
-                <div class="holder">
-                  <p>Charm: 3/10</p>
-                  <p>Hardiness: 6/10</p>
-                  <p>Worldliness: 7/10</p>
-                </div>
-              </div>
-            </div>
-            <div class="section abilities">
-              <h2>Abilities and Weapons</h2>
-              <div class="abilities values">
-                <div class="holder">
-                  <h3>Abilities</h3>
-                  <p>Teleportation</p>
-                  <p>Nano Form</p>
-                </div>
-                <div class="holder">
-                  <h3>Weapon</h3>
-                  <p>Shapeshifting Arm</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section id="p1">
+        <video id="video1">
+          <source src="videos/page 1.mp4" type="video/mp4" />
+        </video>
       </section>
-      <section id="side-characters">
-        <div class="charContainer">
-          <div class="character">
-            <h2>side character 1</h2>
-          </div>
-          <div class="character">
-            <h2>side character 2</h2>
-          </div>
-          <div class="character">
-            <h2>side character 3</h2>
-          </div>
-          <div class="character">
-            <h2>side character 4</h2>
-          </div>
-          <div class="character">
-            <h2>side character 5</h2>
-          </div>
-        </div>
+      <section id="p2">
+        <video id="video2">
+          <source src="videos/page 2.mp4" type="video/mp4" />
+        </video>
       </section>
-      <section id="world-description">
-        <div class="textHolder" style="margin: 0px 200px">
-          <h2>placeholder World description</h2>
-          <br />
-          <p>
-            Welcome to 2050, where the line between life and death has become
-            increasingly blurred. We have made technological advancements,
-            created cyborgs, and befriended horny aliens. Life here can be
-            pretty entertaining.The world itself is a kaleidoscope of colors and
-            twisted landscapes, resembling something out of a fever dream. It's
-            as if the Teletubbies had a lovechild with Blade Runner, creating a
-            world that's both beautiful and haunting. But amidst the wonder lies
-            the harsh reality that life can be fleeting, and death can come at
-            any moment. So, welcome to our world, where death and laughter are
-            never too far apart.
-          </p>
-        </div>
+      <section id="p3">
+        <video id="video3">
+          <source src="videos/page 3.mp4" type="video/mp4" />
+        </video>
       </section>
-      <section id="about-author">
-        <h2>Hello my name is Stefan :)</h2>
+      <section id="p4">
+        <video id="video4">
+          <source src="videos/page 4.mp4" type="video/mp4" />
+        </video>
       </section>
     </div>
   </body>
+  <script src="script.js"></script>
 </html>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #1e1f2b;
-    color: #fff;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  /* Scroll bar */
-  ::-webkit-scrollbar {
-    width: 20px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #d6dee1;
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #a8bbbf;
-  }
-
-  .container {
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-  }
-
-  .charContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .mainContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    width: 100%;
-    height: 60px;
-    background-color: #2a2b3d9d;
-  }
-
-  .navbar ul {
-    display: flex;
-    list-style: none;
-    width: 100%;
-    justify-content: right;
-  }
-
-  .navbar ul li {
-    margin: 0 1rem;
-    padding: 1rem;
-  }
-
-  .navbar ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
-  }
-
-  .navbar ul li a:hover {
-    color: #a2a2a2;
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
-    scroll-snap-align: center;
-  }
-
-  section h1 {
-    font-size: 4rem;
-    color: #fff;
-  }
-
-  section p {
-    font-size: 1.5rem;
-    color: #fff;
-  }
-
-  section#title {
-    background-color: #ff4d4d;
-  }
-
-  section#main-character {
-    background-color: #ff1a1a;
-  }
-
-  section#side-characters {
-    background-color: #cc0000;
-  }
-
-  section#world-description {
-    background-color: #990000;
-  }
-
-  section#about-author {
-    background-color: #660000;
-  }
-
-  .section {
-    border-radius: 10px;
-    padding: 20px;
-    flex: 1;
-  }
-
-  .holder {
-    margin-bottom: 10px;
-  }
-
-  .holder h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-
-  .holder p {
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-
-  .top {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 0.3;
-    margin-bottom: 20px;
-  }
-
-  .bottom {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1;
-    gap: 20px;
-  }
-
-  .left {
-    flex: 1;
-    margin-right: 20px;
-  }
-
-  .right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .bio {
-    background-color: #434659;
-    color: #fff;
-  }
-
-  .stats {
-    background-color: #54798e;
-  }
-
-  .values {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-
-  .abilities {
-    background-color: #90c1d3;
-  }
-
-  .world {
-    background-color: #b5ead7;
-  }
-
-  .characters {
-    background-color: #6fedd6;
-  }
-
-  .author {
-    background-color: #ffbe0b;
-  }
-
-  .image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-</style>
