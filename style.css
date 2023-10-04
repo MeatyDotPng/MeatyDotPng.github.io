@@ -1,115 +1,424 @@
+:root {
+  --main: #27323a;
+  --secondary: #43505571;
+  --accent1: #29a19c;
+  --accent2: #a3f7bf;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main);
+  color: white;
+  scroll-behavior: smooth;
+  font-family: "Source Code Pro";
+}
+
+/* html,
+body {
+  width: 100%;
+  min-height: 100%;
+  color: white;
+  scroll-behavior: smooth;
+  font-family: "Source Code Pro";
+  position: relative;
+}
+
+html::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(images/background.png);
+  background-repeat: repeat;
+  filter: brightness(32%);
+  z-index: -1;
+} */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-:root {
-  --blur: 10px;
-}
-
-body {
-  font-family: Arial, serif;
-  background: url(images/background.png);
-  background-size: cover;
-  color: white;
-  line-height: 1.6;
-  height: 100vh;
-  overflow: hidden;
-}
-
-::-webkit-scrollbar {
-  width: 0;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-  /*css smooth scroll*/
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  width: 100%;
-  height: 60px;
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-  width: 100%;
-  justify-content: right;
-}
-
-.navbar ul li {
-  margin: 0 1rem;
-  padding: 1rem;
-}
-
-.navbar ul li a {
+a {
   text-decoration: none;
-  text-transform: uppercase;
-  color: #f4f4f4;
+  color: white;
+  font-family: "Dela Gothic One";
+  /* font-family: "Plus Jakarta Sans"; */
+  letter-spacing: 2px;
 }
 
-.navbar ul li a:hover {
-  color: rgba(177, 177, 177, 0.55);
+h1 {
+  font-family: "Dela Gothic One";
+  /* font-family: "Plus Jakarta Sans"; */
+  font-size: 36px;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+nav {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav .blob {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(0); /* default size */
+}
+
+.blob.grow {
+  transform: scale(1); /* grown size */
+}
+
+.blob.shrink {
+  transform: scale(0); /* shrunk size */
 }
 
 section {
   position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   width: 100%;
   height: 100vh;
-  scroll-snap-align: center;
-  background-color: white;
 }
 
-video {
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+#nav {
+  flex: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+#nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#name {
+  display: flex;
+  flex-direction: row !important;
+  position: relative;
+}
+
+.blob {
+  height: 80px;
+  width: 80px;
+}
+
+.splash {
+  max-width: 100%;
+  flex: 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-10%);
+  pointer-events: none;
+}
+
+#slogan {
+  flex: 2;
+  transform: translate(40%, -80%);
+  position: relative;
+}
+
+/* distort on scroll */
+.glitch {
+  font-size: 48px;
+  color: var(--accent1);
+  position: relative;
+  display: inline-block;
+  --glitch-width: 0px;
+  --glitch-height: 0px;
+  --glitch-transX: 0px;
+  --glitch-transY: 0px;
+  --glitch-rotate: 0deg;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(50% - var(--glitch-height) / 2),
+    0 calc(50% - var(--glitch-height) / 2),
+    0 calc(50% + var(--glitch-height) / 2),
+    100% calc(50% + var(--glitch-height) / 2),
+    100% 100%,
+    0 100%
+  );
 }
 
-section h1 {
-  font-size: 4rem;
+.glitch::before {
+  color: var(--accent2);
+  transform: translate(var(--glitch-transX), var(--glitch-transY))
+    rotate(var(--glitch-rotate));
 }
 
-section p {
-  font-size: 1.5rem;
+.glitch::after {
+  color: white;
+  transform: translate(
+      calc(-1 * var(--glitch-transX)),
+      calc(-1 * var(--glitch-transY))
+    )
+    rotate(calc(-1 * var(--glitch-rotate)));
 }
 
-section#start {
-  backdrop-filter: blur(var(--blur));
-  background-color: rgba(67, 67, 67, 0.356);
+strong {
+  --letter-spacing: 0px;
+  letter-spacing: var(--letter-spacing);
+}
+/* distort on scroll */
+
+.image {
+  flex: 4;
+  z-index: 1;
 }
 
-section#p1 {
-  background-color: #c5ffeb;
+#intro {
+  flex: 2;
+  transform: translate(-40%, 40%);
+  position: relative;
 }
 
-.arrows {
-  font-size: 50px;
-  animation: float 2s ease-in-out infinite;
+#intro b {
+  font-size: 20px;
 }
 
-@keyframes float {
+#slogan::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: -100px;
+  bottom: -20px;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--accent1) 50%,
+    transparent 50%
+  );
+  background-size: 5px 1px;
+  z-index: -1;
+}
+
+#intro::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -200px;
+  right: 0;
+  bottom: -20px;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--accent2) 50%,
+    transparent 50%
+  );
+  background-size: 5px 1px;
+  z-index: -1;
+}
+
+/* loader */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob-loader {
+  transform-origin: center center;
+  animation: scaleBlob 2s infinite;
+}
+
+@keyframes scaleBlob {
   0%,
   100% {
-    transform: translateY(0);
+    transform: scale(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: scale(1);
   }
+}
+
+/* Project sections */
+.projects {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  max-width: fit-content;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -200px;
+  right: 0;
+  bottom: -20px;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--accent1) 50%,
+    transparent 50%
+  );
+  background-size: 5px 1px;
+  z-index: -1;
+}
+
+.wrapper {
+  flex: 1;
+  display: flex;
+}
+
+.preview {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview img {
+  border-radius: 10px;
+  max-width: 50%;
+  z-index: 1;
+}
+
+.description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description .line {
+  max-width: 70%;
+  position: relative;
+}
+
+.description .line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -250px;
+  right: 0;
+  bottom: -20px;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--accent2) 50%,
+    transparent 50%
+  );
+  background-size: 5px 1px;
+  z-index: -1;
+}
+
+/* About sections */
+#about {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  flex: 1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+  padding: 0 12.5%;
+  perspective: 1500px;
+}
+
+.line {
+  perspective: 1500px;
+}
+
+.card {
+  background-color: var(--secondary);
+  border: 2px solid #435055;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+button {
+  padding: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  color: var(--main);
+  background-color: var(--accent2);
+  font-family: "Source Code Pro";
+}
+
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--accent1),
+    transparent,
+    transparent,
+    transparent
+  );
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  display: none;
+}
+
+.proficiencies {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#proficienciesBlob {
+  width: 70%;
+  height: 70%;
 }
