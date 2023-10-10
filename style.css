@@ -113,6 +113,11 @@ section {
   flex-direction: column;
 }
 
+#links {
+  display: flex !important;
+  align-items: flex-end !important;
+}
+
 #name {
   display: flex;
   flex-direction: row !important;
