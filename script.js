@@ -133,8 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const deltaX = mouseX - centerX;
       const deltaY = mouseY - centerY;
 
-      const tiltX = (deltaY / centerY) * 4; // max tilt in degrees
-      const tiltY = -(deltaX / centerX) * 4; // max tilt in degrees
+      const tiltX = (deltaY / centerY) * 5; // max tilt in degrees
+      const tiltY = -(deltaX / centerX) * 5; // max tilt in degrees
 
       card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
 
