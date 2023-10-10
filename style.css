@@ -113,10 +113,19 @@ section {
   flex-direction: column;
 }
 
+#links {
+  display: flex !important;
+  align-items: flex-end !important;
+}
+
 #name {
   display: flex;
   flex-direction: row !important;
   position: relative;
+}
+
+#name h1 {
+  text-align: center;
 }
 
 .blob {
@@ -189,7 +198,7 @@ section {
 }
 
 strong {
-  --letter-spacing: 0px;
+  --letter-spacing: 17px;
   letter-spacing: var(--letter-spacing);
 }
 /* distort on scroll */
@@ -354,25 +363,6 @@ strong {
   z-index: -1;
 }
 
-/* About sections */
-#about {
-  box-sizing: border-box;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.background {
-  flex: 1;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 50%;
-  padding: 0 12.5%;
-  perspective: 1500px;
-}
-
 .line {
   perspective: 1500px;
 }
@@ -386,18 +376,6 @@ strong {
   transition: transform 0.2s;
   transform-style: preserve-3d;
   overflow: hidden;
-}
-
-button {
-  padding: 5px;
-  margin-top: 20px;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  font-weight: 700;
-  color: var(--main);
-  background-color: var(--accent2);
-  font-family: "Source Code Pro";
 }
 
 .glow {
@@ -418,6 +396,14 @@ button {
   display: none;
 }
 
+/* About sections */
+#about {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
 .proficiencies {
   flex: 1;
   display: flex;
@@ -426,6 +412,6 @@ button {
 }
 
 #proficienciesBlob {
-  width: 70%;
-  height: 70%;
+  width: 40%;
+  height: 40%;
 }
