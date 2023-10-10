@@ -194,7 +194,7 @@ section {
 }
 
 strong {
-  --letter-spacing: 0px;
+  --letter-spacing: 17px;
   letter-spacing: var(--letter-spacing);
 }
 /* distort on scroll */

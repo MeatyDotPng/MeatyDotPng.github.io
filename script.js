@@ -37,8 +37,8 @@ window.addEventListener("scroll", function () {
 
   // For the <strong> element's letter spacing effect
   const scrolled = window.scrollY / window.innerHeight;
-  const baseLetterSpacing = 0;
-  const maxLetterSpacing = 43;
+  const baseLetterSpacing = 17;
+  const maxLetterSpacing = 0;
   const newLetterSpacing =
     baseLetterSpacing + (maxLetterSpacing - baseLetterSpacing) * scrolled;
   together.style.setProperty("--letter-spacing", `${newLetterSpacing}px`);
