@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- kute.js -->
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
+    <!-- kute.js -->
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600&family=Roboto:wght@100;300;400;500;700&family=Source+Code+Pro:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <!-- fonts -->
+
+    <title>Infographic</title>
+  </head>
+  <body>
+    <nav>
+      <a class="top" href="../index.html">
+        <svg
+          class="blob"
+          viewBox="0 0 900 600"
+          width="900"
+          height="600"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+        >
+          <g transform="translate(441.1475031945354 301.7991878896769)">
+            <path
+              class="blob1"
+              d="M98.6 -164.6C140.1 -146.7 194.8 -145.4 210.9 -120.7C226.9 -96 204.5 -48 206.2 1C207.9 50 233.9 100 218.2 125.4C202.5 150.8 145.3 151.6 102 162.3C58.7 172.9 29.3 193.5 -8.4 208.1C-46.2 222.6 -92.3 231.3 -128 216.2C-163.6 201.1 -188.8 162.3 -190.7 122.3C-192.6 82.3 -171.3 41.2 -175.8 -2.6C-180.3 -46.3 -210.5 -92.7 -204.8 -126C-199 -159.4 -157.3 -179.7 -117.1 -198.4C-77 -217 -38.5 -234 -5 -225.4C28.5 -216.7 57 -182.4 98.6 -164.6"
+              fill="#29A19C"
+            ></path>
+          </g>
+          <g
+            transform="translate(465.4217086342655 280.65485364697514)"
+            style="visibility: hidden"
+          >
+            <path
+              class="blob2"
+              d="M76.4 -141C102.8 -117.1 130.7 -104.3 152.3 -82.7C174 -61 189.5 -30.5 206.4 9.7C223.3 50 241.5 100 228.8 137.1C216 174.2 172.3 198.4 129 215.4C85.7 232.4 42.8 242.2 0.2 241.9C-42.5 241.6 -85 231.2 -117.8 208.1C-150.5 185.1 -173.6 149.3 -200.1 112.5C-226.7 75.7 -256.9 37.8 -262.8 -3.4C-268.7 -44.7 -250.4 -89.3 -216.8 -114C-183.2 -138.7 -134.4 -143.4 -95.7 -160.2C-57 -177.1 -28.5 -206 -1.7 -203C25 -200 50 -164.9 76.4 -141"
+              fill="#A3F7BF"
+            ></path>
+          </g>
+          <text
+            x="450"
+            y="350"
+            font-size="130"
+            text-anchor="middle"
+            fill="#27323a"
+            font-weight="bold"
+            font-family="Source Code Pro"
+          >
+            Back
+          </text>
+        </svg>
+      </a>
+    </nav>
+
+    <main id="main">
+      <div
+        class="parallax floor"
+        data-speed="0.3"
+        data-speedz="0"
+        data-rotation="0"
+        data-distance="-200"
+      ></div>
+      <div
+        class="parallax pile1"
+        data-speed="0.27"
+        data-speedz="0.1"
+        data-rotation="0.1"
+        data-distance="-100"
+        onmouseenter="pile1Alternating()"
+        onmouseleave="pile1StopAlternating()"
+      >
+        <div class="bubble hidden" id="bio">
+          <p>
+            Name? ...Unknown... Occupation? ...Unknown... Strengths? ...Why are
+            you asking me all these questions? All I know is that she is a
+            badass!
+          </p>
+        </div>
+      </div>
+      <div
+        class="parallax pile2"
+        data-speed="0.27"
+        data-speedz="0.1"
+        data-rotation="0.1"
+        data-distance="-100"
+        onmouseenter="pile2Alternating()"
+        onmouseleave="pile2StopAlternating()"
+      >
+        <div class="bubble hidden" id="hint">
+          <p>You can scroll to change characters</p>
+        </div>
+      </div>
+      <div
+        class="text parallax"
+        data-speed="0.22"
+        data-speedz="0.15"
+        data-rotation="0.12"
+        data-distance="-100"
+      >
+        <img src="img/logo.png" alt="logo" />
+        <h2>With great loss comes great casualties</h2>
+      </div>
+      <div
+        class="parallax pile3"
+        data-speed="0.19"
+        data-speedz="0.2"
+        data-rotation="0.16"
+        data-distance="100"
+      >
+        <div class="character-stats hidden">
+          <div class="stat">
+            <div class="stat-name">Strength</div>
+            <div class="stat-bar">
+              <div class="stat-fill" id="stat1"></div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-name">Agility</div>
+            <div class="stat-bar">
+              <div class="stat-fill" id="stat2"></div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-name">Smarts</div>
+            <div class="stat-bar">
+              <div class="stat-fill" id="stat3"></div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-name">Hardiness</div>
+            <div class="stat-bar">
+              <div class="stat-fill" id="stat5"></div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-name">Charm</div>
+            <div class="stat-bar">
+              <div class="stat-fill" id="stat4"></div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="stat-name">Worldliness</div>
+            <div class="stat-bar">
+              <div class="stat-fill" id="stat6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="img/character.png"
+        alt="charcter"
+        id="image"
+        class="parallax character"
+        data-speed="0.19"
+        data-speedz="0.2"
+        data-rotation="0.16"
+        data-distance="300"
+      />
+      <div
+        class="parallax pile5"
+        data-speed="0.10"
+        data-speedz="0.3"
+        data-rotation="0.18"
+        data-distance="300"
+        onmouseenter="pile5Alternating()"
+        onmouseleave="pile5StopAlternating()"
+      >
+        <div class="bubble hidden" id="abilities">
+          <p>
+            I saw her arm transform into a blade. My friend also told me she can
+            teleport, but that sounds a little far-fetched to me, so you'll have
+            to see for yourself.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="js/app.js"></script>
+</html>
