@@ -402,6 +402,7 @@ strong {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .proficiencies {
