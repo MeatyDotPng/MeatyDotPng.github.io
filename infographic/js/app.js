@@ -73,9 +73,9 @@ function pile5Alternating() {
   intervalId = setInterval(() => {
     // Toggle between the two images
     if (isFirstImage) {
-      divElement.style.backgroundImage = "url('img/footOpen.png')";
+      divElement.style.backgroundImage = "url('svg/footOpen.svg')";
     } else {
-      divElement.style.backgroundImage = "url('img/footClosed.png')";
+      divElement.style.backgroundImage = "url('svg/footClosed.svg')";
     }
 
     // Toggle the flag for the next iteration
@@ -90,7 +90,7 @@ function pile5StopAlternating() {
   clearInterval(intervalId);
 
   // Set the default background image when the mouse leaves
-  divElement.style.backgroundImage = "url('img/footClosed.png')"; // Set to "none" or remove this line to have no background image when not alternating
+  divElement.style.backgroundImage = "url('svg/footClosed.svg')"; // Set to "none" or remove this line to have no background image when not alternating
 }
 //?
 
@@ -115,20 +115,6 @@ function handleScroll(event) {
   imageElement.src = images[currentImageIndex];
 }
 //!
-
-// hamburger.addEventListener("mouseover", () => {
-//   toggleHidden(li);
-// });
-// hamburger.addEventListener("mouseout", () => {
-//   toggleHidden(li);
-// });
-
-// hamburger.addEventListener("click", () => {
-//   header.classList.toggle("color");
-//   nav.classList.toggle("hidden");
-//   header.style.transition = "0.5s";
-//   nav.style.transition = "0.5s";
-// });
 
 function toggleHidden(element) {
   element.classList.toggle("cloaked");

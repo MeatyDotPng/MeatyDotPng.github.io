@@ -189,7 +189,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  position: absolute;
+  position: relative;
   width: 50%;
   height: 100vh;
   top: 87.5%;
@@ -207,9 +207,11 @@ main {
 }
 
 #bio {
-  border-radius: 20px 20px 20px 0;
-  max-width: 400px;
-  transform: translate(100%, -150%);
+  border-radius: 50px 50px 50px 0;
+  min-width: 400px;
+  top: 15%;
+  left: 85%;
+  transform: translate(-50%, -50%);
 }
 
 .pile2 {
@@ -231,9 +233,11 @@ main {
 }
 
 #hint {
-  border-radius: 0 20px 20px 20px;
+  border-radius: 0 50px 50px 50px;
   max-width: 200px;
-  transform: translate(200%, 300%);
+  top: 45%;
+  left: 70%;
+  transform: translate(-50%, -50%);
 }
 
 .text {
@@ -360,7 +364,7 @@ main {
 /* ========== character stats animation ========== */
 
 .pile5 {
-  background-image: url("img/footClosed.png");
+  background-image: url("svg/footClosed.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center -200px;
@@ -378,7 +382,31 @@ main {
 }
 
 #abilities {
-  border-radius: 20px 20px 20px 0;
+  border-radius: 50px 50px 0 50px;
   max-width: 400px;
-  transform: translate(80%, -150%);
+  top: -10%;
+  left: 10%;
+}
+
+@media (max-width: 1600px) {
+  .pile5 {
+    background-image: url("svg/footClosed.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -200px;
+    position: absolute;
+    width: 60%;
+    height: 100vh;
+    top: 125%;
+    left: 75%;
+    z-index: 8;
+    border: 5px solid transparent;
+  }
+
+  #abilities {
+    border-radius: 50px 50px 0 50px;
+    max-width: 400px;
+    left: 35%;
+    transform: translate(-50%, -50%);
+  }
 }
