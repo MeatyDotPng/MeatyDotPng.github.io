@@ -74,6 +74,15 @@ nav {
   justify-content: flex-end;
 }
 
+.top > .blob > text {
+  transition: all 0.2s ease-in-out;
+}
+
+.top:hover > .blob > text {
+  fill: white !important;
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
 nav .blob {
   transition: transform 0.3s ease-in-out;
   transform: scale(0); /* default size */
@@ -118,6 +127,20 @@ section {
   align-items: flex-end !important;
 }
 
+#links a,
+#socials a {
+  padding: 0 5px;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+#links a:hover,
+#socials a:hover {
+  padding: 0 5px;
+  background-color: white;
+  color: var(--main);
+}
+
 #name {
   display: flex;
   flex-direction: row !important;
@@ -129,8 +152,8 @@ section {
 }
 
 .blob {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
 }
 
 .splash {
@@ -235,7 +258,11 @@ strong {
   z-index: -1;
 }
 
-#intro::after {
+#intro > p:first-child {
+  position: relative;
+}
+
+#intro > p:first-child::after {
   content: "";
   display: block;
   position: absolute;
@@ -339,6 +366,7 @@ strong {
   width: 100px;
   height: auto;
   float: right;
+  transform: translate(20px, 10px);
 }
 
 .description .line {
@@ -402,6 +430,7 @@ strong {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .proficiencies {
