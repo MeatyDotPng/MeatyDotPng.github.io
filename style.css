@@ -72,6 +72,7 @@ nav {
   z-index: 1000;
   display: flex;
   justify-content: flex-end;
+  /* pointer-events: none; */
 }
 
 .top > .blob > text {
@@ -152,8 +153,8 @@ section {
 }
 
 .blob {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
 }
 
 .splash {
