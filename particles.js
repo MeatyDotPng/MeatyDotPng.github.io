@@ -1,77 +1,108 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const canvas = document.getElementById("particleCanvas");
-  const ctx = canvas.getContext("2d");
+// particles.js
 
-  const aboutSection = document.getElementById("about");
-  const blob = document.getElementById("proficienciesBlob");
-  const blobRect = blob.getBoundingClientRect();
+const numOfPlanets = 10;
+const particleSize = 100;
+var colorArray = ["var(--accent1)", "var(--accent2)"];
+// var colorArray = [
+//   "aliceblue",
+//   "aqua",
+//   "aquamarine",
+//   "azure",
+//   "blueviolet",
+//   "blue",
+//   "cadetblue",
+//   "chartreuse",
+//   "coral",
+//   "cornflowerblue",
+//   "cyan",
+//   "crimson",
+//   "darkblue",
+//   "darkcyan",
+//   "darkgoldenrod",
+//   "darkmagenta",
+//   "darkseagreen",
+//   "darkorange",
+//   "darkslateblue",
+//   "darkorchid",
+//   "darkslategray",
+//   "darkturquoise",
+//   "deeppink",
+//   "darkviolet",
+//   "dodgerblue",
+//   "floralwhite",
+//   "fuchsia",
+//   "gold",
+//   "greenyellow",
+//   "honeydew",
+//   "hotpink",
+//   "indigo",
+//   "lawngreen",
+//   "lightblue",
+//   "lightcyan",
+//   "lightgreen",
+//   "lightskyblue",
+//   "lightsalmon",
+//   "lightseagreen",
+//   "mediumslateblue",
+//   "mediumpurple",
+//   "midnightblue",
+//   "paleturquoise",
+//   "palegreen",
+// ];
 
-  canvas.width = aboutSection.offsetWidth;
-  canvas.height = aboutSection.offsetHeight;
-  canvas.style.position = "absolute";
-  canvas.style.top = aboutSection.offsetTop + "px";
-  canvas.style.left = aboutSection.offsetLeft + "px";
-  canvas.style.zIndex = 0; // Ensure it's behind everything else
+const skillsetBlob = document.getElementById("skillsetBlob");
 
-  const particles = [];
-  const numberOfParticles = 5;
+for (let i = 0; i < numOfPlanets; i++) {
+  const particle = document.createElement("span");
+  skillsetBlob.parentNode.insertBefore(particle, skillsetBlob);
 
-  class Particle {
-    constructor(icon, x, y, distance) {
-      this.icon = icon; // This will be your SVG icon
-      this.x = x + canvas.width / 2; // centering it relative to the canvas
-      this.y = y + canvas.height / 2; // centering it relative to the canvas
-      this.distance = distance;
-      this.angle = Math.random() * Math.PI * 2;
-      this.speed = 0.5;
-    }
+  const randDistanceFromSVG = Math.random() * 20 + 50;
+  const angle = Math.random() * 2 * Math.PI;
+  const xPos =
+    skillsetBlob.getBoundingClientRect().width / 2 +
+    randDistanceFromSVG * Math.cos(angle);
+  const yPos =
+    skillsetBlob.getBoundingClientRect().height / 2 +
+    randDistanceFromSVG * Math.sin(angle);
 
-    update() {
-      this.x += Math.cos(this.angle) * this.speed;
-      this.y += Math.sin(this.angle) * this.speed;
+  particle.style.position = "absolute";
+  particle.style.left = "50%";
+  particle.style.top = "50%";
+  particle.style.transform = `translate(-50%, -50%) rotate(${angle}rad)`;
+  particle.style.zIndex = "10";
 
-      // Calculate distance to the center
-      const dx = this.x - canvas.width / 2;
-      const dy = this.y - canvas.height / 2;
-      const distanceToCenter = Math.sqrt(dx * dx + dy * dy);
+  particle.style.width = `${particleSize}px`;
+  particle.style.height = `${particleSize}px`;
 
-      // If it exceeds the max distance or falls below a min distance, reverse the speed (make it move the other way)
-      if (
-        distanceToCenter > this.distance ||
-        distanceToCenter < this.distance * 0.5
-      ) {
-        this.speed = -this.speed;
-      }
-    }
+  const randomColorIndex = Math.floor(Math.random() * colorArray.length);
+  const randomColor = colorArray[randomColorIndex];
 
-    draw() {
-      ctx.beginPath();
-      ctx.moveTo(canvas.width / 2, canvas.height / 2); // Blob center
-      ctx.lineTo(this.x, this.y);
-      ctx.stroke();
+  // Create the child particle
+  const childParticle = document.createElement("div");
+  childParticle.classList.add("child-particle");
+  childParticle.style.position = "absolute";
+  childParticle.style.left = `${xPos}px`;
+  childParticle.style.top = `${yPos}px`;
+  childParticle.style.backgroundColor = randomColor;
 
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, 5, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
+  const randInterval = Math.random() * 30 + 10; // Adjust for desired rotation time
+  childParticle.style.animation = `spinOp ${randInterval}s linear infinite`;
 
-  for (let i = 0; i < numberOfParticles; i++) {
-    const distance = 50 + Math.random() * 150; // Random distance from blob
-    const angle = Math.random() * Math.PI * 2;
-    const x = Math.cos(angle) * distance;
-    const y = Math.sin(angle) * distance;
-    particles.push(new Particle(null, x, y, distance));
-  }
+  // Create image and text inside child particle
+  const imgElement = document.createElement("img");
+  imgElement.src = "images/profile.jpg";
+  imgElement.style.height = "100%";
+  childParticle.appendChild(imgElement);
 
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let particle of particles) {
-      particle.update();
-      particle.draw();
-    }
-    requestAnimationFrame(animate);
-  }
+  const textElement = document.createElement("p");
+  textElement.innerText = "NA";
+  textElement.style.textAlign = "center";
+  textElement.style.fontSize = "20px";
+  textElement.style.color = "var(--main)";
+  textElement.style.fontWeight = "bold";
+  childParticle.appendChild(textElement);
 
-  animate();
-});
+  particle.appendChild(childParticle);
+
+  particle.style.animation = `spin ${randInterval}s linear infinite`;
+}

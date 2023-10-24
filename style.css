@@ -463,7 +463,7 @@ strong {
 }
 
 /* About sections */
-#about {
+#skillset {
   box-sizing: border-box;
   padding: 20px;
   display: flex;
@@ -471,14 +471,47 @@ strong {
   position: relative;
 }
 
-.proficiencies {
+.skillset {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#proficienciesBlob {
+#skillsetBlob {
   width: 40%;
   height: 40%;
+}
+
+.blob {
+  position: relative;
+  overflow: visible; /* Ensure particles are visible outside the SVG */
+}
+
+.child-particle {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 230px;
+  height: 90px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinOp {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
