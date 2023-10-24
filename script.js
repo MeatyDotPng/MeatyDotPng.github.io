@@ -122,20 +122,19 @@ document.addEventListener("DOMContentLoaded", function () {
       { duration: 500 }
     );
 
-    document.querySelectorAll(".projectLink").forEach((projectLink) => {
-      projectLink.addEventListener("mouseenter", function () {
-        if (!tweenToBlob2.playing) {
-          tweenToBlob1.stop();
-          tweenToBlob2.start();
-        }
-      });
+    // Update here to bind the event listeners directly to the .play elements
+    blobElement.addEventListener("mouseenter", function () {
+      if (!tweenToBlob2.playing) {
+        tweenToBlob1.stop();
+        tweenToBlob2.start();
+      }
+    });
 
-      projectLink.addEventListener("mouseleave", function () {
-        if (!tweenToBlob1.playing) {
-          tweenToBlob2.stop();
-          tweenToBlob1.start();
-        }
-      });
+    blobElement.addEventListener("mouseleave", function () {
+      if (!tweenToBlob1.playing) {
+        tweenToBlob2.stop();
+        tweenToBlob1.start();
+      }
     });
   });
 });

@@ -33,15 +33,6 @@ nav {
   font-family: "Source Code Pro";
 }
 
-.top > .blob > text {
-  transition: all 0.2s ease-in-out;
-}
-
-.top:hover > .blob > text {
-  fill: white !important;
-  text-shadow: 0 0 10px rgb(0, 0, 0);
-}
-
 .blob {
   height: 100px;
   width: 100px;
