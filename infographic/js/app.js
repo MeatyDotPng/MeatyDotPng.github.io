@@ -7,17 +7,17 @@ const li = document.querySelector("header ul li:first-child");
 let intervalId; // Variable to store the interval ID for stopping the alternation
 
 //* head animation
-function pile2Alternating() {
-  let divElement = document.querySelector(".pile2");
+function pile3Alternating() {
+  let divElement = document.querySelector(".pile3");
   let isFirstImage = true;
 
   // Start the interval to alternate between the two images
   intervalId = setInterval(() => {
     // Toggle between the two images
     if (isFirstImage) {
-      divElement.style.backgroundImage = "url('img/headOpen.png')";
+      divElement.style.backgroundImage = "url('svg/headOpen.svg')";
     } else {
-      divElement.style.backgroundImage = "url('img/headClosed.png')";
+      divElement.style.backgroundImage = "url('svg/headClosed.svg')";
     }
 
     // Toggle the flag for the next iteration
@@ -25,14 +25,14 @@ function pile2Alternating() {
   }, 500); // 1000ms = 1 second, adjust the interval as desired
 }
 
-function pile2StopAlternating() {
-  let divElement = document.querySelector(".pile2");
+function pile3StopAlternating() {
+  let divElement = document.querySelector(".pile3");
 
   // Stop the alternation by clearing the interval
   clearInterval(intervalId);
 
   // Set the default background image when the mouse leaves
-  divElement.style.backgroundImage = "url('img/headClosed.png')"; // Set to "none" or remove this line to have no background image when not alternating
+  divElement.style.backgroundImage = "url('svg/headClosed.svg')"; // Set to "none" or remove this line to have no background image when not alternating
 }
 
 //* hand animation
@@ -44,9 +44,9 @@ function pile1Alternating() {
   intervalId = setInterval(() => {
     // Toggle between the two images
     if (isFirstImage) {
-      divElement.style.backgroundImage = "url('img/armOpen.png')";
+      divElement.style.backgroundImage = "url('svg/armOpen.svg')";
     } else {
-      divElement.style.backgroundImage = "url('img/armClosed.png')";
+      divElement.style.backgroundImage = "url('svg/armClosed.svg')";
     }
 
     // Toggle the flag for the next iteration
@@ -61,7 +61,7 @@ function pile1StopAlternating() {
   clearInterval(intervalId);
 
   // Set the default background image when the mouse leaves
-  divElement.style.backgroundImage = "url('img/armClosed.png')"; // Set to "none" or remove this line to have no background image when not alternating
+  divElement.style.backgroundImage = "url('svg/armClosed.svg')"; // Set to "none" or remove this line to have no background image when not alternating
 }
 
 //* foot animation

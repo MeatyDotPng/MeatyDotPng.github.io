@@ -185,16 +185,16 @@ main {
 }
 
 .pile1 {
-  background-image: url("img/armClosed.png");
+  background-image: url("svg/armClosed.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: -100px center;
   position: relative;
   width: 50%;
   height: 100vh;
   top: 87.5%;
   left: 75%;
-  z-index: 2;
+  z-index: 3;
   border: 5px solid transparent;
 }
 
@@ -207,24 +207,22 @@ main {
 }
 
 #bio {
-  border-radius: 50px 50px 50px 0;
-  min-width: 400px;
-  top: 15%;
-  left: 85%;
+  border-radius: 50px 50px 0 50px;
+  max-width: 400px;
+  top: 20%;
+  left: 30%;
   transform: translate(-50%, -50%);
 }
 
 .pile2 {
-  background-image: url("img/headClosed.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center -120px;
+  background-color: beige;
+  border-radius: 10px !important;
   position: absolute;
   width: 50%;
   height: 100vh;
-  top: 100%;
-  left: 25%;
-  z-index: 3;
+  top: 80%;
+  left: 42%;
+  z-index: 2;
   border: 5px solid transparent;
 }
 
@@ -233,10 +231,10 @@ main {
 }
 
 #hint {
-  border-radius: 0 50px 50px 50px;
+  border-radius: 50px 50px 50px 0;
   max-width: 200px;
-  top: 45%;
-  left: 70%;
+  top: 60%;
+  left: 65%;
   transform: translate(-50%, -50%);
 }
 
@@ -260,15 +258,15 @@ main {
 }
 
 .pile3 {
-  background-image: url("img/pile.png");
+  background-image: url("svg/headClosed.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center -120px;
+  background-position: center;
   position: absolute;
   color: black;
   font-size: 18px;
   font-weight: 700;
-  width: 25%;
+  width: 50%;
   height: 100vh;
   top: 75%;
   left: 12.5%;
@@ -296,12 +294,24 @@ main {
 .character-stats {
   background-color: transparent;
   display: grid;
+  margin-top: 50px;
   padding: 20px;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
   align-items: center;
   justify-content: center;
+}
+
+/* Target the items in the second row */
+.character-stats > :nth-child(3),
+.character-stats > :nth-child(4) {
+  transform: translateY(-100px);
+}
+
+/* Target the items in the third row */
+.character-stats > :nth-child(5),
+.character-stats > :nth-child(6) {
+  transform: translateY(-200px);
 }
 
 .stat {
@@ -314,7 +324,7 @@ main {
 }
 
 .stat-name {
-  background-color: rgb(173, 0, 0);
+  background-color: #c13326;
   padding: 10px;
   border-radius: 5px;
 }
@@ -325,39 +335,40 @@ main {
   background-color: transparent;
   position: relative;
   overflow: hidden;
+  transform: translateY(-75px);
 }
 
 .stat-fill {
   width: 100%;
   height: 0;
-  background-color: rgb(173, 0, 0);
+  background-color: #c13326;
   border-radius: 0px 0px 5px 5px;
   position: absolute;
   top: 0;
   transition: height 1s;
 }
 
-.pile3:hover #stat1 {
+.pile2:hover #stat1 {
   height: 80%;
 }
 
-.pile3:hover #stat2 {
+.pile2:hover #stat2 {
   height: 80%;
 }
 
-.pile3:hover #stat3 {
+.pile2:hover #stat3 {
   height: 90%;
 }
 
-.pile3:hover #stat4 {
+.pile2:hover #stat4 {
   height: 30%;
 }
 
-.pile3:hover #stat5 {
+.pile2:hover #stat5 {
   height: 60%;
 }
 
-.pile3:hover #stat6 {
+.pile2:hover #stat6 {
   height: 70%;
 }
 
