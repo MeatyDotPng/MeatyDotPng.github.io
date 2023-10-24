@@ -124,6 +124,11 @@ section {
 
 #links {
   display: flex !important;
+  align-items: flex-start !important;
+}
+
+#socials {
+  display: flex !important;
   align-items: flex-end !important;
 }
 
@@ -139,10 +144,15 @@ section {
   transition: all 0.2s ease-in-out;
 }
 
-#links a:hover,
 #socials a:hover {
   padding: 0 5px;
-  background-color: white;
+  background-color: var(--accent1);
+  color: var(--main);
+}
+
+#links a:hover {
+  padding: 0 5px;
+  background-color: var(--accent2);
   color: var(--main);
 }
 
@@ -152,7 +162,7 @@ section {
   position: absolute;
   left: 5px;
   right: -500px;
-  bottom: 30px;
+  bottom: -12px;
   height: 1px;
   background-image: linear-gradient(
     to right,
@@ -168,7 +178,7 @@ section {
   position: absolute;
   left: -500px;
   right: 5px;
-  bottom: 30px;
+  bottom: -12px;
   height: 1px;
   background-image: linear-gradient(
     to right,
