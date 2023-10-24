@@ -72,7 +72,6 @@ nav {
   z-index: 1000;
   display: flex;
   justify-content: flex-end;
-  /* pointer-events: none; */
 }
 
 .top > .blob > text {
@@ -128,6 +127,11 @@ section {
   align-items: flex-end !important;
 }
 
+#email,
+#project {
+  position: relative;
+}
+
 #links a,
 #socials a {
   padding: 0 5px;
@@ -140,6 +144,38 @@ section {
   padding: 0 5px;
   background-color: white;
   color: var(--main);
+}
+
+#project::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5px;
+  right: -500px;
+  bottom: 30px;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--accent2) 50%,
+    transparent 50%
+  );
+  background-size: 5px 1px;
+}
+
+#email::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -500px;
+  right: 5px;
+  bottom: 30px;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--accent1) 50%,
+    transparent 50%
+  );
+  background-size: 5px 1px;
 }
 
 #name {
