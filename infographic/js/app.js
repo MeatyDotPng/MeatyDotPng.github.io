@@ -100,20 +100,21 @@ const imageElement = document.getElementById("image");
 const images = ["img/character.png", "img/family.png", "img/enemy.png"];
 let currentImageIndex = 0;
 
-main.addEventListener("wheel", handleScroll);
+document.addEventListener("keydown", handleKeydown);
 
-function handleScroll(event) {
-  event.preventDefault();
-
-  const delta = Math.sign(event.deltaY);
-  if (delta === 1) {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-  } else if (delta === -1) {
+function handleKeydown(event) {
+  // Check if the pressed key is left or right arrow key
+  if (event.keyCode === 37) {
+    // Left arrow key
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  } else if (event.keyCode === 39) {
+    // Right arrow key
+    currentImageIndex = (currentImageIndex + 1) % images.length;
   }
 
   imageElement.src = images[currentImageIndex];
 }
+
 //!
 
 function toggleHidden(element) {
