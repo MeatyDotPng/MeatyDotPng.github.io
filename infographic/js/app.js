@@ -94,9 +94,10 @@ function pile5StopAlternating() {
 }
 //?
 
-//! scroll character swap
+//! character swap
 const main = document.getElementById("main");
 const imageElement = document.getElementById("image");
+const hiddenElement = document.querySelector(".character-stats");
 const images = ["img/character.png", "img/family.png", "img/enemy.png"];
 let currentImageIndex = 0;
 
@@ -113,7 +114,22 @@ function handleKeydown(event) {
   }
 
   imageElement.src = images[currentImageIndex];
+  updateOpacityClass();
 }
+
+function updateOpacityClass() {
+  // Check if the current image is "character.png"
+  if (imageElement.src.includes("character.png")) {
+    hiddenElement.classList.remove("cloaked");
+    console.log("removed");
+  } else {
+    hiddenElement.classList.add("cloaked");
+    console.log("added");
+  }
+}
+
+// Initial call to set up the correct class
+updateOpacityClass();
 
 //!
 
