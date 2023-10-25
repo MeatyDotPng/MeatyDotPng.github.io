@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600&family=Roboto:wght@100;300;400;500;700&family=Source+Code+Pro:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Source+Code+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
@@ -337,8 +337,23 @@
     </section>
     <section id="skillset">
       <h1 class="heading">SKILLSET</h1>
-      <div class="wrapper">
-        <div class="skillset"></div>
+      <div class="skillset"></div>
+    </section>
+    <section id="contact">
+      <h1 class="heading">CONTACT ME</h1>
+      <div class="contact">
+        <form action="./construction.html" method="get">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     </section>
   </body>

@@ -31,13 +31,11 @@ a {
   text-decoration: none;
   color: white;
   font-family: "Dela Gothic One";
-  /* font-family: "Plus Jakarta Sans"; */
   letter-spacing: 2px;
 }
 
 h1 {
   font-family: "Dela Gothic One";
-  /* font-family: "Plus Jakarta Sans"; */
   font-size: 36px;
   letter-spacing: 3px;
   position: relative;
@@ -285,7 +283,7 @@ strong {
   display: block;
   position: absolute;
   left: -200px;
-  right: 0;
+  right: 5px;
   bottom: -20px;
   height: 1px;
   background-image: linear-gradient(
@@ -491,4 +489,75 @@ strong {
   100% {
     transform: rotate(-360deg);
   }
+}
+
+#contact {
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact form {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+input,
+textarea {
+  background-color: var(--secondary);
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  font-family: "Source Code Pro";
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+/* input and textarea selected; border is set to accent2 */
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid var(--accent2);
+}
+
+input[type="submit"] {
+  background-color: var(--accent1);
+  /* font-family: "Dela Gothic One"; */
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px;
+  width: fit-content;
+  margin: 20px auto;
+  color: var(--main);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--accent2);
+  color: var(--main);
 }
