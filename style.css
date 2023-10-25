@@ -455,7 +455,9 @@ strong {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 
 .blob {
@@ -471,6 +473,26 @@ strong {
   height: 90px;
   padding: 20px;
   border-radius: 5px;
+  color: var(--main);
+  backdrop-filter: blur(1px);
+}
+
+.particle > *:first-child {
+  flex: 1;
+  font-size: 35px;
+}
+
+.infoDiv {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  letter-spacing: 1px;
+}
+
+.infoDiv > *:first-child {
+  font-weight: bold;
 }
 
 @keyframes spin {
@@ -550,7 +572,7 @@ input[type="submit"] {
   width: fit-content;
   margin: 20px auto;
   color: var(--main);
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
