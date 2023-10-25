@@ -3,6 +3,8 @@
   --secondary: #43505571;
   --accent1: #29a19c;
   --accent2: #a3f7bf;
+  --accent1T: #29a19d88;
+  --accent2T: #a3f7bf88;
 }
 
 html,
@@ -13,30 +15,8 @@ body {
   color: white;
   scroll-behavior: smooth;
   font-family: "Source Code Pro";
+  overflow-x: clip;
 }
-
-/* html,
-body {
-  width: 100%;
-  min-height: 100%;
-  color: white;
-  scroll-behavior: smooth;
-  font-family: "Source Code Pro";
-  position: relative;
-}
-
-html::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: url(images/background.png);
-  background-repeat: repeat;
-  filter: brightness(32%);
-  z-index: -1;
-} */
 
 ::-webkit-scrollbar {
   display: none;
@@ -476,11 +456,8 @@ strong {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#skillsetBlob {
-  width: 40%;
-  height: 40%;
+  position: relative;
+  margin-top: 20px;
 }
 
 .blob {
@@ -488,7 +465,7 @@ strong {
   overflow: visible; /* Ensure particles are visible outside the SVG */
 }
 
-.child-particle {
+.particle {
   box-sizing: border-box;
   display: flex;
   align-items: center;
