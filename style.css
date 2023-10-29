@@ -45,8 +45,8 @@ nav {
   position: fixed;
   box-sizing: border-box;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 90%;
+  width: 10%;
   z-index: 1000;
   display: flex;
   justify-content: flex-end;
@@ -262,7 +262,7 @@ strong {
   display: block;
   position: absolute;
   left: 0;
-  right: -100px;
+  right: -50%;
   bottom: -20px;
   height: 1px;
   background-image: linear-gradient(
@@ -282,7 +282,7 @@ strong {
   content: "";
   display: block;
   position: absolute;
-  left: -200px;
+  left: -50%;
   right: 5px;
   bottom: -20px;
   height: 1px;
@@ -452,8 +452,8 @@ strong {
 .skillset {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   position: relative;
   margin-top: 40px;
   border-radius: 10px;
@@ -480,6 +480,11 @@ strong {
 .particle > *:first-child {
   flex: 1;
   font-size: 35px;
+}
+
+#icon svg {
+  flex: 1;
+  font-size: 65px;
 }
 
 .infoDiv {
@@ -563,9 +568,9 @@ textarea:focus {
   border: 2px solid var(--accent2);
 }
 
-input[type="submit"] {
+input[type="submit"],
+#toggleButton {
   background-color: var(--accent1);
-  /* font-family: "Dela Gothic One"; */
   font-weight: bold;
   font-size: 16px;
   letter-spacing: 1px;
@@ -577,9 +582,20 @@ input[type="submit"] {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  z-index: 999;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+#toggleButton:hover {
   background-color: var(--accent2);
   color: var(--main);
+}
+
+#toggleButton {
+  margin: 20px;
+  background-color: #d17a7a;
+}
+
+#toggleButton:hover {
+  background-color: coral;
 }

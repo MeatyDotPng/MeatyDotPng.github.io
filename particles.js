@@ -1,6 +1,22 @@
 var colorArray = ["rgba(41, 161, 157, 0.53)", "rgba(163, 247, 191, 0.53)"];
+let isPaused = false;
 
 var skills = [
+  {
+    icon: "<i class='bx bxl-visual-studio'></i>",
+    title: "VS Code",
+    description: "Expert",
+  },
+  {
+    icon: "<i class='bx bxl-jquery'></i>",
+    title: "jQuery",
+    description: "Novice",
+  },
+  {
+    icon: "<i class='bx bxl-c-plus-plus'></i>",
+    title: "C++",
+    description: "Intermediate",
+  },
   {
     icon: '<i class="lni lni-html5"></i>',
     title: "HTML",
@@ -112,6 +128,11 @@ function applyRandomStyles(element) {
   // Save occupied position
   occupiedPositions.push({ x: randomX, y: randomY });
 
+  // Random color
+  const index = Math.floor(Math.random() * 2);
+  element.setAttribute("data-color", index.toString());
+  element.style.backgroundColor = colorArray[index];
+
   // Apply the styles to the element
   element.style.left = randomX + "px";
   element.style.top = randomY + "px";
@@ -126,9 +147,6 @@ const noParticles = skills.length;
 for (let i = 0; i < noParticles; i++) {
   const particle = document.createElement("div");
   particle.classList.add("particle");
-  const index = Math.floor(Math.random() * 2);
-  particle.setAttribute("data-color", index.toString());
-  particle.style.backgroundColor = colorArray[index];
 
   // Adding the icon
   particle.innerHTML = skills[i].icon;
@@ -165,7 +183,96 @@ function createParticleMovement(particle) {
   };
 }
 
+// Toggle Function
+function toggleAnimation() {
+  isPaused = !isPaused;
+  const button = document.querySelector("#toggleButton"); // Assuming your button has id="toggleButton"
+
+  if (isPaused) {
+    button.innerHTML = '<i class="lni lni-play"></i>';
+    arrangeParticlesInColumn();
+  } else {
+    button.innerHTML = '<i class="lni lni-pause"></i>';
+    resetParticles();
+    animateParticles(particles);
+  }
+}
+
+// Rearrange particles in a column
+function arrangeParticlesInColumn() {
+  const maxParticlesPerRow = 5;
+  const particleSpacing = 20; // Horizontal spacing between particles
+  const rowSpacing = 20; // Vertical spacing between rows
+
+  let currentPosition = { x: particleSpacing, y: 20 };
+
+  // Function to position a particle and update current position
+  function positionParticle(particle, description) {
+    const element = particle.element;
+    element.style.left = currentPosition.x + "px";
+    element.style.top = currentPosition.y + "px";
+
+    // Set color based on description
+    if (description === "Intermediate") {
+      element.style.backgroundColor = colorArray[0];
+    } else {
+      // For "Expert" and "Novice"
+      element.style.backgroundColor = colorArray[1];
+    }
+
+    currentPosition.x += element.offsetWidth + particleSpacing;
+  }
+
+  // Function to reset to next row
+  function resetToNextRow() {
+    currentPosition.x = particleSpacing;
+    currentPosition.y += 90 + rowSpacing; // 90 is assumed height of a particle
+  }
+
+  // Group particles by description
+  const groupedParticles = {
+    Expert: [],
+    Intermediate: [],
+    Novice: [],
+  };
+
+  particles.forEach((particle) => {
+    const description = particle.element.querySelector(
+      ".infoDiv p:nth-child(2)"
+    ).innerText;
+    groupedParticles[description].push(particle);
+  });
+
+  // Position each group
+  ["Expert", "Intermediate", "Novice"].forEach((description) => {
+    let counter = 0;
+    groupedParticles[description].forEach((particle) => {
+      if (counter >= maxParticlesPerRow) {
+        resetToNextRow();
+        counter = 0;
+      }
+      positionParticle(particle, description);
+      counter++;
+    });
+    if (counter > 0) {
+      // Reset to next row for next group
+      resetToNextRow();
+    }
+  });
+}
+
+// Reset particles to random positions
+function resetParticles() {
+  occupiedPositions = []; // Reset occupied positions
+
+  particles.forEach((particle) => {
+    applyRandomStyles(particle.element);
+  });
+}
+
 function animateParticles(particles) {
+  if (isPaused) return;
+
   particles.forEach((p) => {
     let rect = p.element.getBoundingClientRect();
     let parentRect = skillsetDiv.getBoundingClientRect();
@@ -199,3 +306,7 @@ function animateParticles(particles) {
     30
   );
 }
+
+document
+  .querySelector("#toggleButton")
+  .addEventListener("click", toggleAnimation);
