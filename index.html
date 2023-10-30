@@ -67,6 +67,30 @@
       </a>
     </nav>
     <section class="main">
+      <div
+        class="rellax bg"
+        id="shape1"
+        data-rellax-speed="-2"
+        style="transform: rotate(50deg)"
+      ></div>
+      <div
+        class="rellax fg"
+        id="shape2"
+        data-rellax-speed="4"
+        style="transform: rotate(30deg)"
+      ></div>
+      <div
+        class="rellax bg"
+        id="shape3"
+        data-rellax-speed="-4"
+        style="transform: rotate(0deg)"
+      ></div>
+      <div
+        class="rellax fg"
+        id="shape4"
+        data-rellax-speed="2"
+        style="transform: rotate(0deg)"
+      ></div>
       <div id="nav">
         <div></div>
         <div id="name">
@@ -362,7 +386,13 @@
         </form>
       </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/rellax/rellax.min.js"></script>
   </body>
   <script src="particles.js"></script>
   <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var rellax = new Rellax(".rellax");
+    });
+  </script>
 </html>

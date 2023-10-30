@@ -3,6 +3,16 @@ let isPaused = false;
 
 var skills = [
   {
+    icon: "<i class='bx bxl-adobe'></i>",
+    title: "Illustrator",
+    description: "Intermediate",
+  },
+  {
+    icon: "<i class='bx bxl-adobe'></i>",
+    title: "Photoshop",
+    description: "Novice",
+  },
+  {
     icon: "<i class='bx bxl-visual-studio'></i>",
     title: "VS Code",
     description: "Expert",
