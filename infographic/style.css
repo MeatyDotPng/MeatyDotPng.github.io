@@ -179,12 +179,12 @@ main {
   background-image: url("svg/armClosed.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: -100px center;
+  background-position: -80px center;
   position: relative;
   width: 50%;
   height: 100vh;
-  top: 87.5%;
-  left: 75%;
+  top: 80%;
+  left: 85%;
   z-index: 3;
   border: 5px solid transparent;
 }
@@ -212,7 +212,7 @@ main {
   background-repeat: no-repeat;
   border-radius: 10px !important;
   position: absolute;
-  width: 50%;
+  width: 60%;
   height: 100vh;
   top: 80%;
   left: 42%;
@@ -263,7 +263,7 @@ main {
   font-weight: 700;
   width: 50%;
   height: 100vh;
-  top: 75%;
+  top: 70%;
   left: 12.5%;
   z-index: 5;
   border: 5px solid transparent;

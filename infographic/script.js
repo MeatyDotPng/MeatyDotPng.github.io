@@ -98,8 +98,29 @@ function pile5StopAlternating() {
 const main = document.getElementById("main");
 const imageElement = document.getElementById("image");
 const hiddenElement = document.querySelector(".character-stats");
+
+const bio = document.getElementById("bio");
+const abilities = document.getElementById("abilities");
+
 const images = ["img/character.png", "img/family.png", "img/enemy.png"];
 let currentImageIndex = 0;
+const text = [
+  {
+    bio: "Name? ...Nano... Occupation? ...Unknown... Strengths? ...Why are you asking me all these questions? All I know is that she is a badass!",
+    abilities:
+      "I saw her arm transform into a blade. My friend also told me she can teleport, but that sounds a little far-fetched to me, so you'll have to see for yourself.",
+  },
+  {
+    bio: "Meet her family.",
+    abilities:
+      "They aren't good at anything specific. In fact, if I were you I wouldn't look into it.",
+  },
+  {
+    bio: "This is some scary guy.",
+    abilities:
+      "I'm not sure what he can do. He was quite mysterious when I worked for him.",
+  },
+];
 
 document.addEventListener("keydown", handleKeydown);
 
@@ -114,6 +135,13 @@ function handleKeydown(event) {
   }
 
   imageElement.src = images[currentImageIndex];
+
+  console.log(currentImageIndex);
+  console.log(text[currentImageIndex].bio);
+  console.log(text[currentImageIndex].abilities);
+
+  bio.innerHTML = text[currentImageIndex].bio;
+  abilities.innerHTML = text[currentImageIndex].abilities;
   updateOpacityClass();
 }
 
@@ -121,10 +149,8 @@ function updateOpacityClass() {
   // Check if the current image is "character.png"
   if (imageElement.src.includes("character.png")) {
     hiddenElement.classList.remove("cloaked");
-    console.log("removed");
   } else {
     hiddenElement.classList.add("cloaked");
-    console.log("added");
   }
 }
 
