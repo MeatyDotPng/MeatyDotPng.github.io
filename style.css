@@ -22,20 +22,20 @@ body {
 .bg {
   position: absolute;
   z-index: 0;
+  border-radius: 10px;
 }
 
 .fg {
   position: absolute;
-  z-index: 1; /* Above content */
+  z-index: 100;
+  border-radius: 10px;
 }
 
 #shape1 {
-  border-radius: 10px;
   width: 400px;
   height: 400px;
   top: 80%;
   left: 80%;
-  background-color: var(--accent2);
 }
 
 #shape2 {
@@ -43,8 +43,6 @@ body {
   left: 30%;
   width: 200px;
   height: 200px;
-  border-radius: 10px;
-  background-color: var(--accent1);
 }
 
 #shape3 {
@@ -52,8 +50,6 @@ body {
   left: 50%;
   width: 100px;
   height: 100px;
-  border-radius: 50%;
-  background-color: var(--accent1);
 }
 
 #shape4 {
@@ -61,8 +57,69 @@ body {
   left: -6%;
   width: 200px;
   height: 200px;
-  border-radius: 50%;
-  background-color: var(--accent2);
+}
+
+#shape5 {
+  top: 50%;
+  left: 80%;
+  width: 50px;
+  height: 50px;
+}
+
+#shape6 {
+  top: 90%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+#shape7 {
+  top: 30%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+}
+
+#shape8 {
+  top: 50%;
+  left: 40%;
+  width: 50px;
+  height: 50px;
+}
+
+#shape9 {
+  top: 60%;
+  left: 80%;
+  width: 100px;
+  height: 100px;
+}
+
+#shape10 {
+  top: 20%;
+  left: 30%;
+  width: 200px;
+  height: 200px;
+}
+
+#shape11 {
+  top: 70%;
+  left: 70%;
+  width: 50px;
+  height: 50px;
+}
+
+#shape12 {
+  top: 40%;
+  left: 90%;
+  width: 50px;
+  height: 50px;
+}
+
+#shape13 {
+  top: 40%;
+  left: 40%;
+  width: 200px;
+  height: 200px;
 }
 
 ::-webkit-scrollbar {
