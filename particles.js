@@ -1,4 +1,4 @@
-var colorArray = ["rgba(41, 161, 157, 0.53)", "rgba(163, 247, 191, 0.53)"];
+var colorArray = ["#fd305c88", "#95dae988"];
 let isPaused = false;
 
 var skills = [

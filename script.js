@@ -85,11 +85,11 @@ blobs1.forEach((blob1) => {
         blob1,
         {
           path: blob1,
-          attr: { fill: "#29A19C" }, // starting color
+          attr: { fill: "#fd305c" }, // starting color
         },
         {
           path: blob2, // this blob2
-          attr: { fill: "#A3F7BF" }, // ending color
+          attr: { fill: "#95dae9" }, // ending color
         },
         { repeat: 999, duration: 3000, yoyo: true }
       );
@@ -110,15 +110,15 @@ document.addEventListener("DOMContentLoaded", function () {
   blobElements.forEach((blobElement) => {
     const tweenToBlob2 = KUTE.fromTo(
       blobElement,
-      { path: blob1Path, attr: { fill: "#29A19C" } },
-      { path: blob2Path, attr: { fill: "#A3F7BF" } },
+      { path: blob1Path, attr: { fill: "#fd305c" } },
+      { path: blob2Path, attr: { fill: "#95dae9" } },
       { duration: 500 }
     );
 
     const tweenToBlob1 = KUTE.fromTo(
       blobElement,
-      { path: blob2Path, attr: { fill: "#A3F7BF" } },
-      { path: blob1Path, attr: { fill: "#29A19C" } },
+      { path: blob2Path, attr: { fill: "#95dae9" } },
+      { path: blob1Path, attr: { fill: "#fd305c" } },
       { duration: 500 }
     );
 

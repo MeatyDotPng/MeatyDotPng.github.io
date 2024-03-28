@@ -1,10 +1,10 @@
 :root {
-  --main: #27323a;
+  --main: #333333;
   --secondary: #43505571;
-  --accent1: #29a19c;
-  --accent2: #a3f7bf;
-  --accent1T: #29a19d88;
-  --accent2T: #a3f7bf88;
+  --accent1: #fd305c;
+  --accent2: #95dae9;
+  --accent1T: #fd305c88;
+  --accent2T: #95dae988;
 }
 
 html,
@@ -714,9 +714,9 @@ input[type="submit"]:hover,
 
 #toggleButton {
   margin: 20px;
-  background-color: #d17a7a;
+  background-color: var(--accent1);
 }
 
 #toggleButton:hover {
-  background-color: coral;
+  background-color: var(--accent2);
 }
