@@ -19,6 +19,27 @@ body {
   z-index: 999;
 }
 
+.browser-message {
+  display: none;
+  text-align: center;
+  padding: 100% 10px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    overflow: hidden;
+  }
+
+  body * {
+    display: none;
+  }
+
+  .browser-message {
+    display: block;
+  }
+}
+
 .bg {
   position: absolute;
   z-index: 0;
