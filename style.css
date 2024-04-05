@@ -564,8 +564,9 @@ strong {
 
 .card {
   height: fit-content;
-  background-color: var(--secondary);
-  border: 2px solid #435055;
+  border: 1px solid transparent;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1.5px);
   padding: 20px;
   border-radius: 10px;
   transition: transform 0.2s;
